@@ -32,8 +32,8 @@ def choose_game():
     print("Please Choose a game to play:")
     for gamenumber in games.keys():
         print(gamenumber+". "+games[gamenumber]['Title']+" - "+games[gamenumber]['Description'])
-    gamesnumber= len(games.keys())
-    print("\n")
+    gamesnumber = len(games.keys())
+
     gametoload = input()
     while not input_validation("intrange", 1, len(games.keys()), gametoload):
         gametoload = input("You have entered an invalid choice. Please Enter a choice between 1 to %s\n" % gamesnumber)
