@@ -15,4 +15,4 @@ class GuessGame:
 
     def compare_results(self):
         return self.get_guess_from_user() == 0
-      
+
