@@ -1,18 +1,34 @@
+# Methods
+# 1. generate_number - Will generate number between 1 to difficulty and save it to
+# secret_number.
+# 2. get_guess_from_user - Will prompt the user for a number between 1 to difficulty and
+# return the number.
+# 3. compare_results - Will compare the the secret generated number to the one prompted
+# by the get_guess_from_user.
+#4. play - Will call the functions above and play the game. Will return True / False if the user
+# lost or won.
+
 import random
 
+#1
+def generate_number(difficulty):
+    return random.randrange(difficulty)+1
 
-class GuessGame:
 
-    def __init__(self, difficulty):
-        self.difficulty = difficulty
-        self.secret = self.generate_number()
+def get_guess_from_user(difficulty):
+    return int(input("Please Insert a Number between 1 to %s:" % difficulty))
 
-    def generate_number(self):
-        return random.randrange(self.difficulty)
 
-    def get_guess_from_user(self):
-        return input("Please type a number from 1 to %d \n" % self.difficulty)
+def compare_results(secret_number,difficulty):
+    return secret_number == get_guess_from_user(difficulty)
 
-    def compare_results(self):
-        return self.get_guess_from_user() == 0
+
+def play(difficulty):
+    secret_number = generate_number(difficulty)
+    if (compare_results(secret_number, difficulty)):
+        return True
+    else:
+        return False
+
+
 
