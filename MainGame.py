@@ -1,7 +1,8 @@
 from GuessGame import play as guess_game_play
 from memoryGame import play as memory_game_play
 from currency_roulette_game import play as currency_roulette_game_play
-from Utils import screen_cleaner as screen_cleaner
+# from Utils import screen_cleaner as screen_cleaner
+from Scores import *
 
 
 def input_validation(validationmethod, firsvalidator, secondvalidator, evaluatee):
@@ -62,8 +63,11 @@ def load_game():
                 game_outcome = currency_roulette_game_play(level)
         if game_outcome:
             print("Success! you won the game!")
+            add_score(level)
         else:
             print("Defeat! you lost the game!")
+            screen_cleaner()
+            load_game()
     else:
         screen_cleaner()
         print("Screen cleared!")
