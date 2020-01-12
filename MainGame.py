@@ -45,10 +45,10 @@ def choose_game():
 
 
 def choose_level():
-    gamelevel = input("Please choose game difficulty from 1 to 5:\n")
-    while not input_validation("intrange", 1, 5, gamelevel):
-        gamelevel = input("You have entered an invalid choice. Please Enter a choice between 1 to 5\n")
-    return int(gamelevel)
+    game_level = input("Please choose game difficulty from 1 to 5:\n")
+    while not input_validation("intrange", 1, 5, game_level):
+        game_level = input("You have entered an invalid choice. Please Enter a choice between 1 to 5\n")
+    return int(game_level)
 
 
 def load_game():

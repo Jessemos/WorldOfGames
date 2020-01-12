@@ -5,12 +5,13 @@
 # return the number.
 # 3. compare_results - Will compare the the secret generated number to the one prompted
 # by the get_guess_from_user.
-#4. play - Will call the functions above and play the game. Will return True / False if the user
+# 4. play - Will call the functions above and play the game. Will return True / False if the user
 # lost or won.
 
 import random
+# 1
 
-#1
+
 def generate_number(difficulty):
     return random.randrange(difficulty)+1
 
@@ -25,7 +26,7 @@ def compare_results(secret_number,difficulty):
 
 def play(difficulty):
     secret_number = generate_number(difficulty)
-    if (compare_results(secret_number, difficulty)):
+    if compare_results(secret_number, difficulty):
         return True
     else:
         return False
